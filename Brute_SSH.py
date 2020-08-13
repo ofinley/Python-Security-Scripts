@@ -10,7 +10,7 @@ def create_client():
     return client
 
 class Brutes:
-    def __init__(self,charset, length, ip)
+    def __init__(self,char, length, ip):
         self.charset = char
         self.length = length
         self.ip = ip
@@ -29,13 +29,13 @@ class Brutes:
 
 
     @property
-    def guess(self)
-        for guess in it.product(self.charset, repeat=.self.length):
+    def guess(self):
+        for guess in it.product(self.charset, repeat=self.length):
             yield ''.join(guess)
 
 
 
-def RunBrutes()
+def RunBrutes():
     charset = string.ascii_letters + string.digits
     ip = '127.0.0.1' # Target
     brute = Brutes(charset, 4, ip)
@@ -46,11 +46,11 @@ def RunBrutes()
 
 
 def main():
-    ip = '127.0.0.1'  
-    username = 'ubuntu' 
+    ip = '127.0.0.1'  # Set Target IP
+    username = 'ubuntu'
     password = 'sulfur'
     timeout = 5
-    client_policy = paramiko.AutoAddPolicy()
+    client_policy = paramiko.AutoAddPolicy() # Set Policy for Paramiko
     client = paramiko.SSHClient();
     client.set_missing_host_key_policy(client_policy)
     client.connect(ip, username=username, password=password, timeout=timeout)
