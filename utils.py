@@ -2,7 +2,7 @@ from timeit import default_timer as timer
 
 
 def mac_addr(bytestring):
-    return ':'.join('{:02x}'.format(piece) for piece in bytestring.upper()
+    return ':'.join('{:02x}'.format(piece) for piece in bytestring.upper())
                     
 
 def timefunc(func):
